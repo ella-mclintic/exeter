@@ -1,0 +1,6 @@
+Metrics,Before Tuning,After Tuning
+Precision,0.89778,0.88163
+Recall,0.93519,1
+F1 Score,0.9161,0.93709
+Accuracy,0.84898,0.88163
+,,
