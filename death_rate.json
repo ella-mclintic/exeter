@@ -444,7 +444,7 @@
       "legend": null,
       "type": "nominal",
       "sort": [],
-      "scale": {"scheme": "yellowgreenblue"}
+      "scale": {"scheme": "yelloworangered"}
     },
     "tooltip": [
       {"field": "country", "title": "Country"},
