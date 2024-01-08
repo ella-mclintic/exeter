@@ -18,42 +18,42 @@
 
 # Setting up
 ### Libraries and dependencies required to run project:
-pip install numpy
-pip install pandas
-pip install scikit-learn
+    pip install numpy
+    pip install pandas
+    pip install scikit-learn
 pip install matplotlib
 pip install seaborn
 
 
 ### Model Code - view the code for the model, visit the Jupyter notebook available in the repository:
-#### https://github.com/ella-mclintic/exeter/blob/main/problemset2.ipynb
+    #### https://github.com/ella-mclintic/exeter/blob/main/problemset2.ipynb
 
 ### Loading the Pickled Model - The trained model has been serialized and saved as a .pkl file, which can be found here:
-#### https://github.com/ella-mclintic/exeter/blob/main/model.pkl
+    #### https://github.com/ella-mclintic/exeter/blob/main/model.pkl
 
 ## To use this model, you need to download the file and load it into your Python environment. Follow these steps:
 
 ### 1. Download the Pickled Model: Download model.pkl from the repository and save it in your working directory.
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+    with open('model.pkl', 'rb') as file:
+        model = pickle.load(file)
 
 ### 2. Load your new data
-new_data = pd.read_csv('your_new_data.csv')
+    new_data = pd.read_csv('your_new_data.csv')
 
 ### 3. Ensure your data has the same structure and column names as the training set
-new_data = new_data.rename(columns={'your_original_column_name': 'text'})
+    new_data = new_data.rename(columns={'your_original_column_name': 'text'})
 
 ## Preprocess the data to match the training format
 
 ### 4. Extract text data for vectorization
-texts = new_data['text'].tolist()
+    texts = new_data['text'].tolist()
 
 ### 5. Vectorize the text data using the same TF-IDF vectorizer settings as used in training
 #### Note: You need to load the vectorizer used during training or replicate its settings
-from sklearn.feature_extraction.text import TfidfVectorizer
-vectorizer = TfidfVectorizer()
-X_new = vectorizer.fit_transform(texts)
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    vectorizer = TfidfVectorizer()
+    X_new = vectorizer.fit_transform(texts)
 
 ### 6. Making predictions with the processed new data
-predictions = model.predict(X_new)
-print(predictions)
+    predictions = model.predict(X_new)
+    print(predictions)
